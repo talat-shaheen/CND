@@ -60,16 +60,16 @@ public class RestApiTest {
 	      Response response = target.request(MediaType.APPLICATION_JSON).get();
 	      //Response response = target.request("text/plain").get();
 	       // confirm success HTTP status code of 200
-	      //assertThat(response.getStatus(), equalTo(new Integer(200)));
+	      assertThat(response.getStatus(), equalTo(new Integer(200)));
 
 	       // Parse string as a JSON object
-	     //  JsonObject value = Json.parse(response.readEntity(String.class)).asObject();
+	       JsonObject value = Json.parse(response.readEntity(String.class)).asObject();
 	       // check contents of JSON payload
 	      //final UserInfo userInfo = resUser.readEntity(UserInfo.class);
 	        //LOG.log(Level.INFO, "get user info @{0}", userInfo);
 	        //assertTrue("user".equals(userInfo.getName()));
 	      //assertThat(response.getEntity(itemId),equalTo("123456"));
-	       //assertThat(value.getString("itemId", null), equalTo("123456"));
+	       assertThat(value.getString("itemId", null), equalTo("123456"));
 	       //assertThat(value.getString("location", null), equalTo("location"));
 	       //assertThat(value.getInt("quantity", 0), equalTo(new Integer(99)));
 	       //assertThat(value.getString("link", null), equalTo("link"));
@@ -79,14 +79,14 @@ public class RestApiTest {
 	   public void testGetInventorWhenItemIdDoesNotExist() throws Exception {
 
 	       // create a target to the inventory endpoint
-		 	   WebTarget target = client.target("http://localhost:" + port).path("/inventory").path("/123456");
+		 	   WebTarget target = client.target("http://localhost:" + port).path("/inventory").path("/1111");
 		       //String itemId="2020";
 
 	       // call the endpoint with a non-existent `itemId`. Use the GET method. Passing `accepts` header for JSON
-		       //Response response = target.request(MediaType.APPLICATION_JSON).get('{"itemId":"2020"}');
-		       Response response = target.request("text/plain").get();
+		       Response response = target.request(MediaType.APPLICATION_JSON).get();
+		       //Response response = target.request("text/plain").get();
 	       // confirm HTTP status code of 404
-		       //assertThat(response.getStatus(), equalTo(new Integer(404)));
+		       assertThat(response.getStatus(), equalTo(new Integer(404)));
 		 
 	 }
 }
