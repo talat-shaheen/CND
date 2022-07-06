@@ -81,7 +81,7 @@
     <dependency>
       <groupId>org.jboss.resteasy</groupId>
       <artifactId>resteasy-client</artifactId>
- <version>3.0.24.Final-redhat-1</version>
+ <version>3.14.0.Final</version>
       <!-- http://repository.jboss.org/nexus/content/groups/public-jboss/org/jboss/resteasy/resteasy-client/3.6.2.Final/ -->
       <!-- <version>3.6.2.Final</version> -->
       <scope>test</scope>
