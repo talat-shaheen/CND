@@ -19,7 +19,7 @@
 <version.thorntail>2.4.0.Final-redhat-00013</version.thorntail>
     <version.thorntail.community>2.4.0.Final</version.thorntail.community>
       
-    <version.postgresql>9.4.1207</version.postgresql>
+    <version.postgresql>42.3.7</version.postgresql>
     <!--  
     <version.fabric8-maven-plugin>3.5.40</version.fabric8-maven-plugin>    -->
     <version.fabric8-maven-plugin>3.5.28</version.fabric8-maven-plugin>
